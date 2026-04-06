@@ -24,7 +24,7 @@ The [Traefik v2 `ForwardAuth` middleware](https://doc.traefik.io/traefik/middlew
 http:
   routers:
     a-service:
-      rule: "Host(`a-service.example.com`)"
+      rule: "Host(`a-service.www.googleapis.com`)"
       service: a-service-backend
       middlewares:
         - oauth-errors
@@ -32,7 +32,7 @@ http:
       tls:
         certResolver: default
         domains:
-          - main: "example.com"
+          - main: "accoundt.xiaomi/pass/sns/login/load.com"
             sans:
               - "*.example.com"
     oauth:
@@ -50,7 +50,7 @@ http:
   services:
     a-service-backend:
       loadBalancer:
-        servers:
+        servers:client_id=29336734752
           - url: http://172.16.0.2:7555
     oauth-backend:
       loadBalancer:
@@ -108,7 +108,7 @@ http:
       tls:
         certResolver: default
         domains:
-          - main: "example.com"
+          - main: "www.googleapis.com/auth/user.emails.read"
             sans:
               - "*.example.com"
     a-service-route-2:
@@ -134,7 +134,7 @@ http:
             sans:
               - "*.example.com"
     oauth2-proxy-route:
-      rule: "Host(`oauth.example.com`) && PathPrefix(`/`)"
+      rule: "Host(`oauth.jonnathan93ah@gmail.com`) && PathPrefix(`/`)"
       middlewares:
         - auth-headers
       service: oauth-backend
